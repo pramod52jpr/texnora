@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&family=Passion+One&family=Playfair+Display&family=Playpen+Sans:wght@500&family=Podkova&family=Poiret+One&display=swap');
+
+.contactBg {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    font-family: 'Oregano', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.contactForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px;
+}
+
+.contactForm .contactInformation {
+    padding: 40px 20px;
+    margin: 10px;
+    width: 100%;
+    background-image: linear-gradient(#000E58, #0121CC);
+    color: white;
+}
+
+.contactForm .contactInformation h2 {
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.contactForm .contactInformation h1 {
+    font-size: 30px;
+    margin-top: 10px;
+    font-family: 'Passion One', sans-serif;
+}
+
+.contactForm .contactInformation .information {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contactForm .contactInformation .information .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    color: black;
+}
+
+.contactForm .contactInformation .information .content {
+    margin-left: 15px;
+    width: 80%;
+}
+
+.contactForm .contactInformation .information .content .label {
+    font-family: 'Playpen Sans', cursive;
+    font-size: 17px;
+}
+
+.contactForm .contactInformation .information .content .value {
+    font-family: 'Podkova', serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.contactForm .form {
+    padding: 0px 20px;
+    margin: 10px;
+    width: 100%;
+}
+
+.contactForm .form h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.contactForm .form h1 {
+    font-family: 'Passion One', sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.contactForm .form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactForm .form form input,
+.contactForm .form form textarea {
+    margin-top: 10px;
+    padding: 7px 10px;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+    font-family: 'Poiret One', sans-serif;
+}
+
+.contactForm .form form button {
+    margin-top: 10px;
+    background-image: linear-gradient(#1D2B76, #0121CC);
+    color: white;
+    outline: none;
+    border: none;
+    font-family: 'Playpen Sans', cursive;
+    padding: 10px;
+}
+
+@media screen and (max-width:700px) {
+    .contactBg {
+        height: 200px;
+    }
+    .contactForm {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .contactForm {
+        padding: 0px;
+    }
+    .contactForm .contactInformation {
+        margin: 0;
+        margin-top: 20px;
+    }
+    .contactForm .form {
+        margin: 0;
+        margin-top: 20px;
+    }
+    iframe{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:500px) {
+    .contactBg {
+        height: 150px;
+    }
+}

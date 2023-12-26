@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&family=Ovo&family=Poiret+One&display=swap');
+
+.carousel2Page .carousel .carousel-item{
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+.carousel2Page .carousel .carousel-indicators button{
+    background-color: grey;
+    width: 30px;
+    height: 15px;
+    border: none;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.carousel2Page .carousel .carousel-item .content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 50%;
+    padding: 50px;
+    overflow: hidden;
+    height: 100%;
+    color: black;
+}
+.carousel2Page .carousel .carousel-item .content h1{
+    font-size: 25px;
+    font-family: 'Ovo', serif;
+}
+.carousel2Page .carousel .carousel-item .content p{
+    font-size: 20px;
+    font-family: 'Poiret One', sans-serif;
+}
+.carousel2Page .carousel .carousel-item .content a{
+    font-family: 'Overlock', sans-serif;
+    display: inline-block;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:900px){
+    .carousel2Page .carousel .carousel-item{
+        height: 300px;
+    }
+    .carousel2Page .carousel .carousel-item .content{
+        width: 70%;
+    }
+    .carousel2Page .carousel .carousel-item .content h1{
+        font-size: 20px;
+    }
+    .carousel2Page .carousel .carousel-item .content p{
+        font-size: 15px;
+    }
+    .carousel2Page .carousel .carousel-item .content a{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:600px){
+    .carousel2Page .carousel .carousel-indicators button{
+        width: 20px;
+        height: 10px;
+    }
+    .carousel2Page .carousel .carousel-item{
+        height: 300px;
+    }
+    .carousel2Page .carousel .carousel-item .content{
+        width: 100%;
+        padding: 30px;
+    }
+    .carousel2Page .carousel .carousel-item .content a{
+        font-size: 13px;
+        margin: 0;
+    }
+}

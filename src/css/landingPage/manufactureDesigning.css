@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit:wght@200&display=swap');
+
+.manufactureDesigning {
+    display: flex;
+}
+
+.manufactureDesigning .image {
+    width: 50%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.manufactureDesigning .content {
+    background-color: rgba(232, 234, 229, 0.75);
+    width: 50%;
+    padding: 100px;
+}
+
+.manufactureDesigning .content h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.manufactureDesigning .content p {
+    font-family: 'Outfit', sans-serif;
+}
+
+@media screen and (max-width:850px) {
+    .manufactureDesigning .content {
+        padding: 50px;
+    }
+
+    .manufactureDesigning .image {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .manufactureDesigning {
+        flex-direction: column;
+    }
+
+    .designing {
+        flex-direction: column-reverse;
+    }
+
+    .manufactureDesigning .image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .manufactureDesigning .content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .manufactureDesigning .content {
+        padding: 30px;
+    }
+}

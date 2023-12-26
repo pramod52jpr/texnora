@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Playfair+Display+SC&display=swap');
+
+.about .image{
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 10px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.about .image img{
+    width: 100%;
+    height: 100%;
+    transform: translate(20px, 20px);
+}
+.about .content{
+    padding: 30px;
+}
+.about .content h1{
+    font-family: 'Palanquin', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.about .content p{
+    font-family: 'Playfair Display SC', serif;
+    color: grey;
+    font-size: 15px;
+}
+
+@media screen and (max-width:650px){
+    .about .image{
+        width: 100%;
+        margin: 0;
+        height: auto;
+        float: none;
+    }
+    .about .image img{
+        transform: none;
+    }
+    .about .content{
+        padding: 20px;
+    }
+}

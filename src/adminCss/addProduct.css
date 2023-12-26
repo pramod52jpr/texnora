@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+.addProduct h1{
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.addProduct .cancel{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.addProduct .cancel button{
+    outline: none;
+    border: none;
+    background-color: rgb(192, 0, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.addProduct form{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+}
+.addProduct form .images{
+    display: flex;
+}
+.addProduct form .images label{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    height: 60px;
+    width: 60px;
+    font-size: 10px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.addProduct form input[Type="file"]{
+    display: none;
+}
+.addProduct form input, .addProduct form textarea, .addProduct form select{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 8px;
+    padding: 7px 10px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 3px;
+    resize: none;
+}
+.addProduct form button{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #002993;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}

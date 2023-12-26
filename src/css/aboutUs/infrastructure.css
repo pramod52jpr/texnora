@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&family=Playfair+Display+SC&display=swap');
+
+.infrastructure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.infrastructure h1{
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    margin: 0;
+}
+.infrastructure img{
+    width: 100%;
+}
+.infrastructure p{
+    margin: 0;
+    padding: 20px 100px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    color: grey;
+}
+
+@media screen and (max-width:800px){
+    .infrastructure p{
+        margin: 0;
+        padding: 20px 30px;
+    }
+}

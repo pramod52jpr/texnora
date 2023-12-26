@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Overlock+SC&family=Ovo&family=Oxygen:wght@300&family=Playfair+Display+SC&display=swap');
+
+.productDetailPage{
+    display: flex;
+    padding: 10px;
+}
+.productDetailPage .productImages{
+    width: 60%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productDetailPage .productImages .carousel{
+    width: 83%;
+}
+.productDetailPage .productImages .carousel .carousel-inner .carousel-item{
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.productDetailPage .productImages .carousel .carousel-control-prev,.productDetailPage .productImages .carousel .carousel-control-next{
+    opacity: 1;
+}
+.productDetailPage .productImages .carousel .carousel-control-prev{
+    left: -70px;
+}
+.productDetailPage .productImages .carousel .carousel-control-next{
+    right: -70px;
+}
+.productDetailPage .productImages .carousel .carousel-control-prev .prev, .productDetailPage .productImages .carousel .carousel-control-next .next{
+    background-color: rgb(106, 106, 106);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 500px;
+}
+.productDetailPage .productImages .carousel .carousel-indicators{
+    bottom: -50px;
+    margin: 0;
+}
+.productDetailPage .productImages .carousel .carousel-indicators button{
+    background-size: cover;
+    background-position: center;
+    text-indent: 0;
+    height: 30px;
+    width: 50px;
+    opacity: 1;
+    border: none;
+    margin: 0px 5px;
+}
+.productDetailPage .productImages .carousel .carousel-indicators button.active{
+    border: 1px solid black;
+}
+
+
+.productDetailPage .productDetail{
+    width: 40%;
+}
+.productDetailPage .productDetail .name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productDetailPage .productDetail .name h1{
+    font-family: 'Overlock SC', sans-serif;
+    font-size: 20px;
+}
+.productDetailPage .productDetail .name button{
+    font-size: 15px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.productDetailPage .productDetail .prosrno{
+    text-align: center;
+    font-family: 'Overlock SC', sans-serif;
+    font-size: 20px;
+}
+.productDetailPage .productDetail .quote{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productDetailPage .productDetail .quote button{
+    width: 100%;
+    margin: 5px;
+    outline: none;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    padding: 10px;
+}
+.productDetailPage .productDetail .quote button i{
+    margin-right: 10px;
+}
+.productDetailPage .productDetail .quote button.custom{
+    background-color: white;
+    color: black;
+}
+.productDetailPage .productDetail .enquiry{
+    background-color: #F1F1F1;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    color: grey;
+    overflow: hidden;
+}
+.productDetailPage .productDetail .enquiry .content button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.productDetailPage .productDetail .enquiry img{
+    width: 30%;
+}
+.productDetailPage .productDetail .details .content{
+    font-family: 'Outfit', sans-serif;
+    margin-top: 20px;
+}
+.productDetailPage .productDetail .details .content h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+.productDetailPage .productDetail .details .content p{
+    font-size: 15px;
+}
+
+@media screen and (max-width:900px){
+    .productDetailPage{
+        display: flex;
+        flex-direction: column;
+    }
+    .productDetailPage .productImages{
+        width: 100%;
+        padding-top: 20px;
+    }
+    .productDetailPage .productDetail{
+        width: 100%;
+        padding: 20px;
+    }
+}
+@media screen and (max-width:700px){
+    .productDetailPage .productImages{
+        height: 300px;
+    }
+    .productDetailPage .productImages .carousel{
+        width: 75%;
+    }
+    .productDetailPage .productImages .carousel .carousel-control-prev{
+        left: -55px;
+    }
+    .productDetailPage .productImages .carousel .carousel-control-next{
+        right: -55px;
+    }
+    .productDetailPage .productImages .carousel .carousel-inner .carousel-item{
+        height: 200px;
+    }
+}
+@media screen and (max-width:500px){
+    .productDetailPage .productImages .carousel .carousel-control-prev{
+        left: -40px;
+    }
+    .productDetailPage .productImages .carousel .carousel-control-next{
+        right: -40px;
+    }
+}
+
+.viewmore{
+    padding: 10px 20px;
+}
+.viewmore h1{
+    padding: 0px 10px;
+    font-size: 25px;
+    color: grey;
+    font-family: 'Outfit', sans-serif;
+}
+.viewmore .items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.viewmore .items .item{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    width: 22.5%;
+    overflow: hidden;
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.viewmore .items .item .image{
+    width: 95%;
+    height: 200px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    margin: 5px 0px;
+    transition-duration: 0.5s;
+}
+.viewmore .items .item div{
+    position: relative;
+    width: 100%;
+    border-top: 1px solid grey;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.viewmore .items .item div h2{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.viewmore .items .item div button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    outline: 0;
+    border: 0;
+    border-left: 1px solid grey;
+    background-color: rgba(0, 0, 255, 0.427);
+    color: white;
+    transition-duration: 10s;
+}
+
+@media screen and (max-width:1000px){
+    .viewmore .items .item{
+        width: 30%;
+    }
+}
+@media screen and (max-width:700px){
+    .viewmore .items .item{
+        width: 45%;
+    }
+}
+@media screen and (max-width:500px){
+    .viewmore .items .item{
+        width: 100%;
+    }
+}
+
+
+.exploreAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.exploreAll button{
+    outline: none;
+    border: 1px solid grey;
+    background-color: transparent;
+    padding: 10px 30px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    transition-duration: 0.2s;
+}
+.exploreAll button:hover{
+    background-color: black;
+    color: white;
+}

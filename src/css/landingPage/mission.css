@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit:wght@200&display=swap');
+
+.mission {
+    display: flex;
+}
+
+.mission .image {
+    width: 50%;
+    height: 700px;
+    background-color: #E5E6E8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+.mission .content {
+    background-color: #E5E6E8;
+    width: 50%;
+    padding: 100px;
+}
+
+.mission .content h1 {
+    font-family: 'Oswald', sans-serif;
+}
+.mission .content p{
+    font-family: 'Outfit', sans-serif;
+}
+
+@media screen and (max-width:850px){
+    .mission .content {
+        padding: 50px;
+    }
+    .mission .image {
+        height: 500px;
+    }
+}
+    @media screen and (max-width:650px){
+        .mission {
+            flex-direction: column-reverse;
+        }
+        .mission .image {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .mission .content {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        .mission .content {
+            padding: 30px;
+        }
+    }

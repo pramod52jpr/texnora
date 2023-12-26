@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Oswald&display=swap');
+
+.practice h1 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 40px;
+}
+
+.practice .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 60px;
+}
+
+.practice .items .item {
+    text-align: center;
+    background-color: #FAF9F9;
+    padding: 30px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.practice .items .item img {
+    width: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.practice .items .item p {
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .practice .items .item {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .practice .items {
+        padding: 20px;
+    }
+    .practice .items .item {
+        width: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit:wght@200&display=swap');
+
+.commitments {
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.commitments h1 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 40px;
+}
+
+.commitments .items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.commitments .items .item {
+    padding: 30px;
+    margin: 10px;
+    width: 22.7%;
+    background-color: rgba(177, 199, 212, 0.27);
+}
+
+.commitments .items .item h2 {
+    font-family: 'Oswald', sans-serif;
+}
+.commitments .items .item p{
+    font-family: 'Outfit', sans-serif;
+}
+
+@media screen and (max-width:1000px){
+    .commitments .items .item {
+        width: 47%;
+    }
+}
+@media screen and (max-width:800px){
+    .commitments .items {
+        padding: 30px;
+    }
+    .commitments .items .item {
+        width: 45%;
+    }
+}
+@media screen and (max-width:600px){
+    .commitments h1 {
+        font-size: 25px;
+        padding-top: 20px;
+    }
+    .commitments .items {
+        padding: 20px;
+    }
+    .commitments .items .item {
+        width: 100%;
+    }
+}

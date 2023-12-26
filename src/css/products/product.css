@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Sansita&display=swap');
+
+.productPage{
+    padding: 10px 40px;
+}
+.productPage .items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.productPage .items .item{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    width: 22.5%;
+    overflow: hidden;
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.productPage .items .item .image{
+    width: 95%;
+    height: 200px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    margin: 5px 0px;
+    transition-duration: 0.5s;
+}
+.productPage .items .item div{
+    position: relative;
+    width: 100%;
+    border-top: 1px solid grey;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.productPage .items .item div h2{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.productPage .items .item div button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    outline: 0;
+    border: 0;
+    border-left: 1px solid grey;
+    background-color: rgba(0, 0, 255, 0.427);
+    color: white;
+    transition-duration: 10s;
+}
+
+@media screen and (max-width:1000px){
+    .productPage .items .item{
+        width: 30%;
+    }
+}
+@media screen and (max-width:800px){
+    .productPage{
+        padding: 10px 40px;
+    }
+}
+@media screen and (max-width:700px){
+    .productPage .items .item{
+        width: 45%;
+    }
+}
+@media screen and (max-width:500px){
+    .productPage{
+        padding: 10px 20px;
+    }
+    .productPage .items .item{
+        width: 100%;
+    }
+}
+
+.productPage .letsTalk{
+    padding: 30px;
+}
+
+.productPage .letsTalk .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Sansita', sans-serif;
+}
+.productPage .letsTalk .content h1{
+    font-size: 30px;
+}
+.productPage .letsTalk .content button{
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+@media screen and (max-width:500px){
+    .productPage .letsTalk{
+        padding: 20px;
+    }
+    .productPage .letsTalk .content h1{
+        font-size: 20px;
+    }
+    .productPage .letsTalk .content button{
+        font-size: 14px;
+    }
+}

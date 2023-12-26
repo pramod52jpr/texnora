@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+.adminPanelPage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+}
+.adminPanelPage .content{
+    width: 50%;
+    padding: 20px;
+}
+.adminPanelPage .content h1{
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+.adminPanelPage .content h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    color: grey;
+}
+.adminPanelPage .content form{
+    width: 70%;
+    margin-top: 30px;
+}
+.adminPanelPage .content form button{
+    width: 100%;
+    outline: none;
+    border: 1px solid grey;
+    font-family: 'Outfit', sans-serif;
+    background-color: #746BF5;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.adminPanelPage .content form .inputs{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 15px;
+}
+.adminPanelPage .content form .inputs input{
+    outline: none;
+    border: 1px solid grey;
+    padding: 7px 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.adminPanelPage .image{
+    width: 45%;
+}
+.adminPanelPage .image img{
+    width: 100%;
+}
+
+@media screen and (max-width:900px){
+    .adminPanelPage{
+        padding: 20px 40px;
+    }
+    .adminPanelPage .content form{
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px){
+    .adminPanelPage{
+        flex-direction: column-reverse;
+        padding: 20px 20px;
+    }
+    .adminPanelPage .content{
+        width: 100%;
+    }
+    .adminPanelPage .image{
+        width: 100%;
+    }
+}

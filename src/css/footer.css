@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Overlock&family=Playfair+Display+SC&display=swap');
+
+footer {
+    background-image: linear-gradient(#E2F8FF, white);
+}
+
+footer .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+footer .footerContainer .footerAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30%;
+}
+
+footer .footerContainer .footerAbout img {
+    width: 100%;
+}
+
+footer .footerContainer .footerAbout .content {
+    width: 80%;
+}
+
+footer .footerContainer .footerAbout .content p {
+    margin-top: 20px;
+    font-family: 'Overlock', sans-serif;
+}
+
+footer .footerContainer .footerAbout .content a {
+    font-family: 'Playfair Display SC', serif;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 7px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+footer .footerContainer .footerProducts h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer .footerContainer .footerProducts .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .footerContainer .footerProducts .content a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Overlock', sans-serif;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+footer .footerContainer .footerContact {
+    width: 30%;
+}
+
+footer .footerContainer .footerContact h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer .footerContainer .footerContact p {
+    font-family: 'Overlock', sans-serif;
+    font-size: 17px;
+}
+
+footer .footerContainer .footerContact p a {
+    text-decoration: none;
+}
+
+footer .footerNav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer .footerNav a {
+    text-decoration: none;
+    color: black;
+    margin: 0px 10px;
+    margin-bottom: 50px;
+    font-family: 'Overlock', sans-serif;
+}
+
+@media screen and (max-width:700px){
+    footer .footerContainer {
+        flex-direction: column;
+        padding: 30px;
+        padding-bottom: 0;
+    }
+    footer .footerContainer .footerAbout {
+        width: 100%;
+        padding: 15px;
+        align-items: flex-start;
+    }
+    footer .footerContainer .footerAbout img {
+        width: 50%;
+    }
+    footer .footerContainer .footerAbout .content {
+        width: 100%;
+    }
+    footer .footerContainer .footerProducts {
+        width: 100%;
+        padding: 15px;
+    }
+    footer .footerContainer .footerContact {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width:500px){
+    footer .footerContainer {
+        padding: 20px;
+        padding-bottom: 0;
+    }
+}

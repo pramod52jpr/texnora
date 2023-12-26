@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit:wght@200&display=swap');
+
+.journeyVision {
+    display: flex;
+}
+
+.journeyVision .image {
+    width: 50%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.journeyVision .content {
+    background-color: rgba(232, 234, 229, 0.75);
+    width: 50%;
+    padding: 100px;
+}
+
+.journeyVision .content h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.journeyVision .content p {
+    font-family: 'Outfit', sans-serif;
+}
+
+@media screen and (max-width:850px) {
+    .journeyVision .content {
+        padding: 50px;
+    }
+
+    .journeyVision .image {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .journeyVision {
+        flex-direction: column;
+    }
+
+    .journey {
+        flex-direction: column-reverse;
+    }
+
+    .journeyVision .image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .journeyVision .content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .journeyVision .content {
+        padding: 30px;
+    }
+}
