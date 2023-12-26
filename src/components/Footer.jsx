@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/footer.css'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -9,22 +10,22 @@ export default function Footer() {
           <img src="../../../assets/texnora-logo.png" alt="" />
           <div className="content">
             <p>Welcome to our home textile manufacturing company from India! We are a leading manufacturer and exporter of high-quality home textile products. With years of experience in the industry, we have established ourselves as a trusted name in the market.</p>
-            <a href="#">Learn More</a>
+            <Link to={"/about-us"}>Learn More</Link>
           </div>
         </div>
         <div className="footerProducts">
           <h1>Products</h1>
           <div className="content">
-            <a href="#">Kids Ponchos</a>
-            <a href="#">Pillow covers</a>
-            <a href="#">Kids bath robes</a>
-            <a href="#">Hooded Towels</a>
-            <a href="#">Bags</a>
-            <a href="#">Table runner</a>
-            <a href="#">Sofa cover</a>
-            <a href="#">Bed covers</a>
-            <a href="#">Kitchen apron</a>
-            <a href="#">Table cloth</a>
+            <Link to={""}>Kids Ponchos</Link>
+            <Link to={""}>Pillow covers</Link>
+            <Link to={""}>Kids bath robes</Link>
+            <Link to={""}>Hooded Towels</Link>
+            <Link to={""}>Bags</Link>
+            <Link to={""}>Table runner</Link>
+            <Link to={""}>Sofa cover</Link>
+            <Link to={""}>Bed covers</Link>
+            <Link to={""}>Kitchen apron</Link>
+            <Link to={""}>Table cloth</Link>
           </div>
         </div>
         <div className="footerContact">
@@ -36,10 +37,10 @@ export default function Footer() {
       </div>
       <hr />
       <div className="footerNav">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/categories"}>Products</Link>
+        <Link to={"/about-us"}>About Us</Link>
+        <Link to={"/contact-us"}>Contact Us</Link>
       </div>
     </footer>
   )

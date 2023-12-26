@@ -48,7 +48,7 @@ export default function AddCategory(props) {
             <form onSubmit={onsubmit}>
                 <label htmlFor="catImage">
                     {
-                        imgUrl.length == 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} />
+                        imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
                     }
                 </label>
                 <input type="file" onChange={onChangeImage} name="catImage" id="catImage" accept='.jpg,.png,.jpeg' required />

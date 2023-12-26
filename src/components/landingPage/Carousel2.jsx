@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../css/landingPage/carousel2.css'
+import { Link } from 'react-router-dom'
 
 export default function Carousel2() {
     return (
@@ -16,28 +17,28 @@ export default function Carousel2() {
                         <div className="content">
                             <h1>CURTAINS</h1>
                             <p>Elevate your home's allure with our exquisite curtains, where every thread weaves a story of comfort, sophistication, and unparalleled craftsmanship</p>
-                            <a href="#">EXPLORE COLLECTION</a>
+                            <Link to={"/categories"}>EXPLORE COLLECTION</Link>
                         </div>
                     </div>
                     <div className="carousel-item" style={{ backgroundImage: "url('assets/landingPage/slider6.png')" }}>
                         <div className="content">
                             <h1>BED LINEN</h1>
                             <p>where dreams meet indulgence, and every night is a promise of sublime comfort.</p>
-                            <a href="#">EXPLORE COLLECTION</a>
+                            <Link to={"/categories"}>EXPLORE COLLECTION</Link>
                         </div>
                     </div>
                     <div className="carousel-item" style={{ backgroundImage: "url('assets/landingPage/slider7.png')" }}>
                         <div className="content">
                             <h1>TABLE LINEN</h1>
                             <p>Dine in style, draped in elegance</p>
-                            <a href="#">EXPLORE COLLECTION</a>
+                            <Link to={"/categories"}>EXPLORE COLLECTION</Link>
                         </div>
                     </div>
                     <div className="carousel-item" style={{ backgroundImage: "url('assets/landingPage/slider8.png')" }}>
                         <div className="content">
                             <h1>KITCHEN LINEN</h1>
                             <p>Cook with Confidence, Protected by our Linens.</p>
-                            <a href="#">EXPLORE COLLECTION</a>
+                            <Link to={"/categories"}>EXPLORE COLLECTION</Link>
                         </div>
                     </div>
                 </div>

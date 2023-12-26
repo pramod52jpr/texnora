@@ -118,25 +118,25 @@ export default function UpdateProduct(props) {
                 <div className="images">
                     <label htmlFor="proImg1">
                         {
-                            imgUrl1.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl1} width={"100%"} height={"100%"} />
+                            imgUrl1.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl1} width={"100%"} height={"100%"} alt='' />
                         }
                     </label>
                     <input type="file" onChange={onChangeImage1} name="proImg1" id="proImg1" accept='.jpg,.png,.jpeg' />
                     <label htmlFor="proImg2">
                         {
-                            imgUrl2.length == 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl2} width={"100%"} height={"100%"} />
+                            imgUrl2.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl2} width={"100%"} height={"100%"} alt='' />
                         }
                     </label>
                     <input type="file" onChange={onChangeImage2} name="proImg2" id="proImg2" accept='.jpg,.png,.jpeg' />
                     <label htmlFor="proImg3">
                         {
-                            imgUrl3.length == 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl3} width={"100%"} height={"100%"} />
+                            imgUrl3.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl3} width={"100%"} height={"100%"} alt='' />
                         }
                     </label>
                     <input type="file" onChange={onChangeImage3} name="proImg3" id="proImg3" accept='.jpg,.png,.jpeg' />
                     <label htmlFor="proImg4">
                         {
-                            imgUrl4.length == 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl4} width={"100%"} height={"100%"} />
+                            imgUrl4.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl4} width={"100%"} height={"100%"} alt='' />
                         }
                     </label>
                     <input type="file" onChange={onChangeImage4} name="proImg4" id="proImg4" accept='.jpg,.png,.jpeg' />

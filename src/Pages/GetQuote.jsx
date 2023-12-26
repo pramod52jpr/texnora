@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import '../css/getQuote.css'
 import ReactLoading from 'react-loading';
-import Lottie from 'lottie-react';
-import quote_success from '../animation/quote_success.json';
+import SuccessModal from '../components/SuccessModal';
 
 export default function GetQuote(props) {
     const [done, setDone] = useState(false);
@@ -44,14 +43,7 @@ export default function GetQuote(props) {
             <div className="getQuote">
                 {
                     done ?
-                        <div className="successGetQuote">
-                            <Lottie className='lottie' animationData={quote_success} />
-                            <div className="content">
-                                <h1>Quote Request Sent</h1>
-                                <p>Thankyou for your Request, Our team will get back to you</p>
-                                <button onClick={props.closeModal}>Done</button>
-                            </div>
-                        </div>
+                        <SuccessModal h1={"Quote Request Sent"} p={"Thankyou for your Request, Our team will get back to you"} closeModal={props.closeModal} />
                         :
                         <>
                             <div className="cancel">

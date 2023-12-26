@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import '../css/customPopup.css'
 import ReactLoading from 'react-loading';
-import Lottie from 'lottie-react';
-import quote_success from '../animation/quote_success.json';
+import SuccessModal from '../components/SuccessModal';
 
 export default function CustomPopUp(props) {
   const [done, setDone] = useState(false);
@@ -37,8 +36,8 @@ export default function CustomPopUp(props) {
       const token = process.env.REACT_APP_TOKEN;
       const customUrl = process.env.REACT_APP_CUSTOM_API;
       const formData = new FormData();
-      if(typeof(imageFile)==="object"){
-        formData.append("image",imageFile);
+      if (typeof (imageFile) === "object") {
+        formData.append("image", imageFile);
       }
       formData.append("body", JSON.stringify(inputs));
       await fetch(customUrl, {
@@ -58,15 +57,8 @@ export default function CustomPopUp(props) {
   return (
     <div className="customPopup">
       {
-        done ?
-          <div className="successCustom">
-            <Lottie className='lottie' animationData={quote_success} />
-            <div className="content">
-              <h1>Requirment added</h1>
-              <p>Thank you for your requirements, Our team will get back to you shortly</p>
-              <button onClick={props.closeModal}>Done</button>
-            </div>
-          </div>
+        !done ?
+          <SuccessModal h1={"Requirment added"} p={"Thank you for your requirements, Our team will get back to you shortly"} closeModal={props.closeModal} />
           :
           <>
             <div className="cancel">
@@ -77,7 +69,7 @@ export default function CustomPopUp(props) {
             <form onSubmit={onsubmit}>
               <label htmlFor="image">
                 {
-                  imgUrl.length == 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} />
+                  imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
                 }
               </label>
               <input type="file" onChange={onChangeImage} name="image" id="image" accept='.jpg,.png,.jpeg' />

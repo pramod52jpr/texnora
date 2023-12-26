@@ -12,7 +12,7 @@ export default function ProductDetail() {
     const params = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
-    const [hover, setHover] = useState(false);
+    const [hover, setHover] = useState("");
     const [productsData, setProductsData] = useState([]);
     const imgBaseUrl = process.env.REACT_APP_BASE_URL;
     const modalStyle = {
@@ -159,62 +159,26 @@ export default function ProductDetail() {
             <div className="viewmore">
                 <h1>View more products</h1>
                 <div className="items">
-                    <div className="item" onClick={() => navigate("/product-details")} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                        <div className="image" style={{ backgroundImage: hover ? "url('assets/landingPage/slider5.png')" : "url('assets/landingPage/slider6.png')" }}></div>
-                        <div>
-                            <h2>ID - TN-EC (43)</h2>
-                            {
-                                hover ?
-                                    <button onClick={(e) => {
-                                        e.stopPropagation();
-                                        console.log("printed butter");
-                                    }}>Get Quote</button> : ""
-                            }
+                    {
+                        productsData.slice(0,productsData.length>4?4:productsData.length).map(element => <div key={element.id} className="item" onClick={() => navigate(`/product-details/${element.cid}/${element.id}`)} onMouseOver={() => setHover(`hover${element.id}`)} onMouseLeave={() => setHover("")}>
+                            <div className="image" style={{ backgroundImage: hover === `hover${element.id}` ? `url('${imgBaseUrl}/storage/productimages/${element.img1}')` : `url('${imgBaseUrl}/storage/productimages/${element.img2}')` }}></div>
+                            <div>
+                                <h2>{element.pro_no}</h2>
+                                {/* {
+                                    hover === `hover${element.id}` ?
+                                        <button onClick={(e) => {
+                                            e.stopPropagation();
+                                            console.log("printed butter");
+                                        }}>Get Quote</button> : ""
+                                } */}
+                            </div>
                         </div>
-                    </div>
-                    <div className="item" onClick={() => navigate("/product-details")} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                        <div className="image" style={{ backgroundImage: hover ? "url('assets/landingPage/slider5.png')" : "url('assets/landingPage/slider6.png')" }}></div>
-                        <div>
-                            <h2>ID - TN-EC (43)</h2>
-                            {
-                                hover ?
-                                    <button onClick={(e) => {
-                                        e.stopPropagation();
-                                        console.log("printed butter");
-                                    }}>Get Quote</button> : ""
-                            }
-                        </div>
-                    </div>
-                    <div className="item" onClick={() => navigate("/product-details")} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                        <div className="image" style={{ backgroundImage: hover ? "url('assets/landingPage/slider5.png')" : "url('assets/landingPage/slider6.png')" }}></div>
-                        <div>
-                            <h2>ID - TN-EC (43)</h2>
-                            {
-                                hover ?
-                                    <button onClick={(e) => {
-                                        e.stopPropagation();
-                                        console.log("printed butter");
-                                    }}>Get Quote</button> : ""
-                            }
-                        </div>
-                    </div>
-                    <div className="item" onClick={() => navigate("/product-details")} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                        <div className="image" style={{ backgroundImage: hover ? "url('assets/landingPage/slider5.png')" : "url('assets/landingPage/slider6.png')" }}></div>
-                        <div>
-                            <h2>ID - TN-EC (43)</h2>
-                            {
-                                hover ?
-                                    <button onClick={(e) => {
-                                        e.stopPropagation();
-                                        console.log("printed butter");
-                                    }}>Get Quote</button> : ""
-                            }
-                        </div>
-                    </div>
+                        )
+                    }
                 </div>
             </div>
             <div className="exploreAll">
-                <button>Explore all products</button>
+                <button onClick={()=>navigate(`/products/${params.cid}`)}>Explore all products</button>
             </div>
         </>
     )
