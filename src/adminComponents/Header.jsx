@@ -1,8 +1,9 @@
 import React from 'react'
 import '../adminCss/header.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header(props) {
+    const navigate=useNavigate();
     function closeNav() {
         document.getElementById("offcanvasNavbar").classList.remove("show");
         document.body.style.removeProperty("overflow");
@@ -38,6 +39,28 @@ export default function Header(props) {
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link active" aria-current="page" to={"/admin-products"}>Products</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-quote-datas"}>Quotes</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-custom-requirements"}>Requirements</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-contact-us-data"}>Contact Us Data</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-data"}>Admin Data</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-slider-image"}>Slider Images</Link>
+                                </li>
+                                <hr />
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" onClick={()=>{
+                                        localStorage.clear();
+                                        navigate("/admin");
+                                    }} to={"/admin"}>Log Out</Link>
                                 </li>
                             </ul>
                         </div>

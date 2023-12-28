@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer>
+    <footer style={{overflow:"hidden"}}>
       <div className="footerContainer">
-        <div className="footerAbout">
+        <div className="footerAbout" data-aos="fade-right">
           <img src="../../../assets/texnora-logo.png" alt="" />
           <div className="content">
             <p>Welcome to our home textile manufacturing company from India! We are a leading manufacturer and exporter of high-quality home textile products. With years of experience in the industry, we have established ourselves as a trusted name in the market.</p>
             <Link to={"/about-us"}>Learn More</Link>
           </div>
         </div>
-        <div className="footerProducts">
+        <div className="footerProducts" data-aos="zoom-out">
           <h1>Products</h1>
           <div className="content">
             <Link to={""}>Kids Ponchos</Link>
@@ -28,7 +28,7 @@ export default function Footer() {
             <Link to={""}>Table cloth</Link>
           </div>
         </div>
-        <div className="footerContact">
+        <div className="footerContact" data-aos="fade-left">
           <h1>Contact Us</h1>
           <p>Reg. Office: 4/46-A, Sadaiyam palayam, Andankovil Melbagam, Karur-India-639008</p>
           <p>Ph: <a href="tel:+91 93600 57155">+91 93600 57155</a></p>

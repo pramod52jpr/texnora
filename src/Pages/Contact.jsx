@@ -59,11 +59,11 @@ export default function Contact() {
             <ReactModal ariaHideApp={false} isOpen={doneModal} style={modalStyle}>
                 <SuccessModal h1={"Thanks"} p={"Thank you for Contacting Us, Our team will get back to you shortly"} closeModal={closeModal} />
             </ReactModal>
-            <div className="contactBg" style={{ backgroundImage: "url('assets/contact/contactbg.png')" }}>
-                Contact Us
+            <div className="contactBg" style={{ overflow: "hidden", backgroundImage: "url('assets/contact/contactbg.png')" }}>
+                <div data-aos="zoom-out">Contact Us</div>
             </div>
-            <div className="contactForm">
-                <div className="contactInformation">
+            <div className="contactForm" style={{ overflow: "hidden" }}>
+                <div className="contactInformation" data-aos="fade-right">
                     <h2>Lets Talk</h2>
                     <h1>Speak with Our Team</h1>
                     <div className="information">
@@ -94,7 +94,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-                <div className="form">
+                <div className="form" data-aos="fade-left">
                     <h2>Get In Touch</h2>
                     <h1>Fill in the Form Below</h1>
                     <form onSubmit={onsubmit}>

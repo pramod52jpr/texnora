@@ -3,9 +3,9 @@ import '../../css/landingPage/process.css'
 
 export default function Process() {
     return (
-        <div className="process">
-            <h1>OUR MANUFACTURING PROCESS</h1>
-            <div id="carouselExample" className="carousel slide">
+        <div className="process" style={{overflow:"hidden"}}>
+            <h1 data-aos="zoom-out">OUR MANUFACTURING PROCESS</h1>
+            <div id="carouselExample" className="carousel slide" data-aos="zoom-out">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1">Design</button>
                     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2">Material</button>

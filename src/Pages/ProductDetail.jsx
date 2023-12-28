@@ -46,7 +46,11 @@ export default function ProductDetail() {
         });
     }
     useEffect(() => {
-        fetchProducts();
+        if(params.cid && params.pid){
+            fetchProducts();
+        }else{
+            navigate("/categories");
+        }
     }, []);
     return (
         <>
@@ -60,8 +64,8 @@ export default function ProductDetail() {
                 loading ? <div style={{ height: "300px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <ReactLoading type='spokes' height={50} width={50} color='green' />
                 </div>
-                    : productsData.map((element, index) => <div key={element.id} className="productDetailPage" style={{ display: element.id === parseInt(params.pid) ? "flex" : "none" }}>
-                        <div className="productImages">
+                    : productsData.map((element, index) => <div key={element.id} className="productDetailPage" style={{ display: element.id === parseInt(params.pid) ? "flex" : "none", overflow: "hidden" }}>
+                        <div className="productImages" data-aos="fade-right">
                             <div id={`carouselExampleIndicators${index}`} className="carousel slide">
                                 {
                                     showCustomModal || showGetQuoteModal ? null :
@@ -99,7 +103,7 @@ export default function ProductDetail() {
                                 }
                             </div>
                         </div>
-                        <div className="productDetail">
+                        <div className="productDetail" data-aos="fade-left">
                             <div className="name">
                                 <button onClick={() => {
                                     if (index !== 0) {
@@ -156,11 +160,11 @@ export default function ProductDetail() {
                     )
             }
 
-            <div className="viewmore">
-                <h1>View more products</h1>
+            <div className="viewmore" style={{overflow:"hidden"}}>
+                <h1 data-aos="zoom-out">View more products</h1>
                 <div className="items">
                     {
-                        productsData.slice(0,productsData.length>4?4:productsData.length).map(element => <div key={element.id} className="item" onClick={() => navigate(`/product-details/${element.cid}/${element.id}`)} onMouseOver={() => setHover(`hover${element.id}`)} onMouseLeave={() => setHover("")}>
+                        productsData.slice(0, productsData.length > 4 ? 4 : productsData.length).map(element => <div key={element.id} data-aos="zoom-out" className="item" onClick={() => navigate(`/product-details/${element.cid}/${element.id}`)} onMouseOver={() => setHover(`hover${element.id}`)} onMouseLeave={() => setHover("")}>
                             <div className="image" style={{ backgroundImage: hover === `hover${element.id}` ? `url('${imgBaseUrl}/storage/productimages/${element.img1}')` : `url('${imgBaseUrl}/storage/productimages/${element.img2}')` }}></div>
                             <div>
                                 <h2>{element.pro_no}</h2>
@@ -177,8 +181,8 @@ export default function ProductDetail() {
                     }
                 </div>
             </div>
-            <div className="exploreAll">
-                <button onClick={()=>navigate(`/products/${params.cid}`)}>Explore all products</button>
+            <div className="exploreAll" style={{overflow:"hidden"}}>
+                <button onClick={() => navigate(`/products/${params.cid}`)} data-aos="zoom-out">Explore all products</button>
             </div>
         </>
     )

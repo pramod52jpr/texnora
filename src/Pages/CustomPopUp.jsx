@@ -57,7 +57,7 @@ export default function CustomPopUp(props) {
   return (
     <div className="customPopup">
       {
-        !done ?
+        done ?
           <SuccessModal h1={"Requirment added"} p={"Thank you for your requirements, Our team will get back to you shortly"} closeModal={props.closeModal} />
           :
           <>

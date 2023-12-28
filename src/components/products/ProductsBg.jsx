@@ -9,10 +9,10 @@ export default function ProductsBg(props) {
         props.loading ? <div style={{ height: "300px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <ReactLoading type='spokes' height={50} width={50} color='green' />
         </div>
-            : <div className="productsBgPage">
-                <h1>Kitchen Collection</h1>
-                <p>24 Products</p>
-                <div className="productBg" style={{ backgroundImage: "url('../../../assets/products/productsbg.png')" }}>
+            : <div className="productsBgPage" style={{overflow:"hidden"}}>
+                <h1 data-aos="fade-right">Products</h1>
+                <p data-aos="fade-right">{productsData.length} Products</p>
+                <div className="productBg" style={{ backgroundImage: "url('../../../assets/products/productsbg.png')" }} data-aos="zoom-out">
                     <img className="logo" src="../../../assets/products/texnora-logo2.png" alt="" />
                     <div className="productsImages">
                         <div className="images">

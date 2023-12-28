@@ -17,26 +17,30 @@ export default function AddCategory(props) {
 
     async function onsubmit(e) {
         e.preventDefault();
-        setSubmitLoading(true);
-        const token = process.env.REACT_APP_TOKEN;
-        const apiUrl = process.env.REACT_APP_CAT_API;
+        if (imgUrl.length === 0) {
+            alert("Please Upload Image");
+        } else {
+            setSubmitLoading(true);
+            const token = process.env.REACT_APP_TOKEN;
+            const apiUrl = process.env.REACT_APP_CAT_API;
 
-        const formData = new FormData();
-        formData.append("image", imageFile);
-        formData.append("body", JSON.stringify(inputs));
-        await fetch(apiUrl, {
-            method:"post",
-            headers: { token },
-            body: formData
-        }).then(res => res.json()).then((res) => {
-            setSubmitLoading(false);
-            alert("Category Added Successfully");
-            props.closeModal();
-            props.fetchCategories();
-        }).catch((e) => {
-            setSubmitLoading(false);
-            alert("Category not added because of some error");
-        })
+            const formData = new FormData();
+            formData.append("image", imageFile);
+            formData.append("body", JSON.stringify(inputs));
+            await fetch(apiUrl, {
+                method: "post",
+                headers: { token },
+                body: formData
+            }).then(res => res.json()).then((res) => {
+                setSubmitLoading(false);
+                alert("Category Added Successfully");
+                props.closeModal();
+                props.fetchCategories();
+            }).catch((e) => {
+                setSubmitLoading(false);
+                alert("Category not added because of some error");
+            })
+        }
     }
 
     return (

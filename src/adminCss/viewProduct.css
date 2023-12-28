@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Overlock+SC&family=Ovo&family=Oxygen:wght@300&family=Playfair+Display+SC&display=swap');
 
-.viewProduct .cancel{
+.viewProduct {
+    height: 90vh;
+    width: 300px;
+}
+
+.viewProduct .cancel {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.viewProduct .cancel button{
+
+.viewProduct .cancel button {
     outline: none;
     border: none;
     background-color: rgb(192, 0, 0);
@@ -18,29 +24,35 @@
     border-radius: 2px;
     font-size: 20px;
 }
-.viewProduct{
-    width: 200px;
-}
-.viewProduct .productImages{
+
+.viewProduct .productImages {
+    margin-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.viewProduct .productImages .carousel{
+
+.viewProduct .productImages .carousel {
     width: 100%;
 }
-.viewProduct .productImages .carousel .carousel-inner .carousel-item{
-    height: 150px;
-    width: 200px;
-    background-size: cover;
+
+.viewProduct .productImages .carousel .carousel-inner .carousel-item,
+.viewProduct .productImages div.image {
+    height: 300px;
+    width: 300px;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
-.viewProduct .productImages .carousel .carousel-control-prev,.viewProduct .productImages .carousel .carousel-control-next{
+
+.viewProduct .productImages .carousel .carousel-control-prev,
+.viewProduct .productImages .carousel .carousel-control-next {
     opacity: 1;
 }
-.viewProduct .productImages .carousel .carousel-control-prev .prev, .viewProduct .productImages .carousel .carousel-control-next .next{
+
+.viewProduct .productImages .carousel .carousel-control-prev .prev,
+.viewProduct .productImages .carousel .carousel-control-next .next {
     background-color: rgb(106, 106, 106);
     display: flex;
     justify-content: center;
@@ -50,12 +62,16 @@
     border-radius: 500px;
 }
 
+.viewProduct .content {
+    padding: 10px 0px;
+}
 
-.viewProduct .content .detailLabel{
+.viewProduct .content .detailLabel {
     margin-top: 5px;
     font-family: 'Overlock SC', sans-serif;
     font-weight: bold;
 }
-.viewProduct .content .detailValue{
+
+.viewProduct .content .detailValue {
     font-family: 'Overlock SC', sans-serif;
 }

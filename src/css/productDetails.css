@@ -16,7 +16,7 @@
 }
 .productDetailPage .productImages .carousel .carousel-inner .carousel-item{
     height: 400px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -206,8 +206,10 @@
     width: 95%;
     height: 200px;
     border-radius: 5px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
+    border: none;
     margin: 5px 0px;
     transition-duration: 0.5s;
 }

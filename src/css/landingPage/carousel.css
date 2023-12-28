@@ -2,6 +2,8 @@
 
 .carouselPage .carousel .carousel-item{
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00524b;
     background-position: center;
     height: 400px;
 }

@@ -26,8 +26,10 @@
     width: 95%;
     height: 200px;
     border-radius: 5px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    border: none;
     margin: 5px 0px;
     transition-duration: 0.5s;
 }

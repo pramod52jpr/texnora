@@ -26,13 +26,13 @@ export default function Categories() {
     return (
         <>
             <div className="categories">
-                <h1>All Collections</h1>
+                <h1 data-aos="zoom-in">All Collections</h1>
                 <div className="items">
                     {
                         loading ? <div style={{ height: "300px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <ReactLoading type='spokes' height={50} width={50} color='green' />
                         </div> :
-                            catData.map(element => <Link to={`/products/${element.id}`} className="item" key={element.id}>
+                            catData.map(element => <Link to={`/products/${element.id}`} className="item" key={element.id} data-aos="zoom-out">
                                 <div className="image" style={{ backgroundImage: `url('${imgBaseUrl}/storage/categoryimages/${element.image}')` }}></div>
                                 <h2>{element.name}</h2>
                             </Link>

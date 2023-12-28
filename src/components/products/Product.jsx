@@ -9,13 +9,13 @@ export default function Product(props) {
     const productsData = props.productsData;
     const imgBaseUrl = process.env.REACT_APP_BASE_URL;
     return (
-        <div className="productPage">
+        <div className="productPage" style={{overflow:"hidden"}}>
             <div className="items">
                 {
                     props.loading?<div style={{height:"300px",width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}}>
                         <ReactLoading type='spokes' height={50} width={50} color='green' />
                     </div>
-                    :productsData.map(element => <div key={element.id} className="item" onClick={() => navigate(`/product-details/${element.cid}/${element.id}`)} onMouseOver={() => setHover(`hover${element.id}`)} onMouseLeave={() => setHover("")}>
+                    :productsData.map(element => <div key={element.id} data-aos="zoom-out" className="item" onClick={() => navigate(`/product-details/${element.cid}/${element.id}`)} onMouseOver={() => setHover(`hover${element.id}`)} onMouseLeave={() => setHover("")}>
                         <div className="image" style={{ backgroundImage: hover===`hover${element.id}` ? `url('${imgBaseUrl}/storage/productimages/${element.img1}')` : `url('${imgBaseUrl}/storage/productimages/${element.img2}')` }}></div>
                         <div>
                             <h2>{element.pro_no}</h2>
@@ -31,7 +31,7 @@ export default function Product(props) {
                     )
                 }
             </div>
-            <div className="letsTalk">
+            <div className="letsTalk" data-aos="zoom-out">
                 <div className="content">
                     <h1>Lets Talk</h1>
                     <button>contact us</button>

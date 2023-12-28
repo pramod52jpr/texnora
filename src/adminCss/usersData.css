@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+.adminDatas .topOptions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+}
+.adminDatas .topOptions button{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    padding: 3px 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition-duration: 0.1s;
+}
+.adminDatas .topOptions button:hover{
+    background-color: rgb(0, 103, 0);
+}
+.adminDatas .topOptions input{
+    padding: 5px 7px;
+    outline: none;
+    border: 1px solid grey;
+    font-family: 'Overlock', sans-serif;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:500px){
+    .adminDatas .topOptions input{
+        width: 170px;
+    }
+}
+
+/* table design */
+
+.adminDatas {
+    padding: 20px;
+    font-family: 'Overlock', sans-serif;
+}
+
+.adminDatas table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.adminDatas table thead tr {
+    background-color: black;
+    color: white;
+}
+
+.adminDatas table thead tr th {
+    padding: 10px 20px;
+}
+
+.adminDatas table tbody tr:nth-child(even) {
+    background-color: rgb(217, 217, 217);
+}
+
+.adminDatas table tbody tr td {
+    width: 33%;
+    padding: 10px 20px;
+}
+
+.adminDatas table tbody tr td div.image {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.adminDatas table tbody tr td .action {
+    display: flex;
+    align-items: center;
+}
+
+.adminDatas table tbody tr td .action button {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    padding: 5px 15px;
+    margin: 0px 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    transition-duration: 0.1s;
+}
+.adminDatas table tbody tr td .action button.edit:hover{
+    background-color: rgb(0, 0, 165);
+}
+
+.adminDatas table tbody tr td .action button.delete {
+    background-color: red;
+}
+.adminDatas table tbody tr td .action button.delete:hover {
+    background-color: rgb(207, 1, 1);
+}
+
+@media screen and (max-width:500px) {
+    .adminDatas table tbody tr td div.image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .adminDatas table {
+        font-size: 13px;
+    }
+
+    .adminDatas table tbody tr td .action button {
+        margin: 0px 5px;
+        padding: 3px 10px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+
+    .adminDatas table thead tr th {
+        padding: 5px 10px;
+    }
+
+    .adminDatas table tbody tr td {
+        padding: 5px 10px;
+    }
+}

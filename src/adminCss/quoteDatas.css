@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+.quoteDatas {
+    padding: 20px;
+    font-family: 'Overlock', sans-serif;
+    overflow: auto;
+}
+
+.quoteDatas table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.quoteDatas table thead tr {
+    background-color: black;
+    color: white;
+}
+
+.quoteDatas table thead tr th {
+    padding: 10px 20px;
+}
+
+.quoteDatas table tbody tr:nth-child(even) {
+    background-color: rgb(217, 217, 217);
+}
+.quoteDatas table tbody tr td {
+    padding: 10px 20px;
+}
+
+.quoteDatas table tbody tr td .action {
+    display: flex;
+    align-items: center;
+}
+
+.quoteDatas table tbody tr td .action button {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    padding: 5px 15px;
+    margin: 0px 5px;
+    font-size: 13px;
+    border-radius: 5px;
+    transition-duration: 0.1s;
+}
+.quoteDatas table tbody tr td .action button.view {
+    background-color: green;
+}
+.quoteDatas table tbody tr td .action button.view:hover {
+    background-color: rgb(0, 94, 0);
+}
+
+@media screen and (max-width:600px) {
+    .quoteDatas table {
+        font-size: 13px;
+    }
+
+    .quoteDatas table tbody tr td .action button {
+        margin: 0px 2px;
+        padding: 3px 10px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+
+    .quoteDatas table thead tr th {
+        padding: 5px 5px;
+    }
+
+    .quoteDatas table tbody tr td {
+        padding: 5px 5px;
+    }
+}
