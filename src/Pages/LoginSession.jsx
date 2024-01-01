@@ -1,33 +1,32 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function LoginSession() {
     const navigate = useNavigate();
-    const [allAdmins, setAllAdmins] = useState([]);
-    async function fetchAllAdmins() {
+    const [allAdminData, setAllAdminData] = useState([]);
+    async function fetchAllAdminData() {
         const token = process.env.REACT_APP_TOKEN;
         const adminApi = process.env.REACT_APP_ADMIN_API;
         await fetch(adminApi, {
             headers: { token }
         }).then(res => res.json()).then((res) => {
-            setAllAdmins(res.data);
+            const id = localStorage.getItem("id");
+            setAllAdminData(res.data);
+            if (id === null) {
+                navigate("/admin");
+                console.log("first");
+            } else {
+                const user = res.data.filter(ele => ele.id === parseInt(id));
+                if (user.length === 0) {
+                    navigate("/admin");
+                }
+            }
         }).catch((e) => {
             console.log("the error is " + e);
         })
     }
     useEffect(() => {
-        fetchAllAdmins().then(() => {
-            const id = localStorage.getItem("id");
-            if (id === null) {
-                navigate("/admin");
-                console.log("first");
-            } else {
-                const user = allAdmins.filter(ele => ele.id === parseInt(id));
-                if (user.length === 0) {
-                    navigate("/admin");
-                }
-            }
-        });
+        fetchAllAdminData();
     }, []);
     return null;
 }

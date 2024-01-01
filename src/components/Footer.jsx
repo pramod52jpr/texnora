@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/footer.css'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const [allProductData, setAllProductData] = useState([]);
+  async function fetchProducts() {
+    const token = process.env.REACT_APP_TOKEN;
+    const apiUrl = process.env.REACT_APP_PRODUCT_API;
+    await fetch(apiUrl, {
+      headers: { token }
+    }).then(res => res.json()).then((res) => {
+      setAllProductData(res.data);
+    }).catch((e) => {
+      console.log("the error is " + e);
+    });
+  }
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
-    <footer style={{overflow:"hidden"}}>
+    <footer style={{ overflow: "hidden" }}>
       <div className="footerContainer">
         <div className="footerAbout" data-aos="fade-right">
           <img src="../../../assets/texnora-logo.png" alt="" />
@@ -16,22 +32,15 @@ export default function Footer() {
         <div className="footerProducts" data-aos="zoom-out">
           <h1>Products</h1>
           <div className="content">
-            <Link to={""}>Kids Ponchos</Link>
-            <Link to={""}>Pillow covers</Link>
-            <Link to={""}>Kids bath robes</Link>
-            <Link to={""}>Hooded Towels</Link>
-            <Link to={""}>Bags</Link>
-            <Link to={""}>Table runner</Link>
-            <Link to={""}>Sofa cover</Link>
-            <Link to={""}>Bed covers</Link>
-            <Link to={""}>Kitchen apron</Link>
-            <Link to={""}>Table cloth</Link>
+            {
+              allProductData.slice(0, allProductData.length > 6 ? 6 : allProductData.length).map(element => <Link key={element.id} to={`/product-details/${element.cid}/${element.id}`}>{element.name}</Link>)
+            }
           </div>
         </div>
         <div className="footerContact" data-aos="fade-left">
           <h1>Contact Us</h1>
           <p>Reg. Office: 4/46-A, Sadaiyam palayam, Andankovil Melbagam, Karur-India-639008</p>
-          <p>Ph: <a href="tel:+91 93600 57155">+91 93600 57155</a></p>
+          <p>Ph: <a href="tel:+919360057155">+91 93600 57155</a></p>
           <p>Email: <a href="mailto:kru.texnora@gmail.com">kru.texnora@gmail.com</a></p>
         </div>
       </div>

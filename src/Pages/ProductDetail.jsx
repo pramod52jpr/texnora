@@ -51,7 +51,7 @@ export default function ProductDetail() {
         }else{
             navigate("/categories");
         }
-    }, []);
+    }, [params.cid]);
     return (
         <>
             <ReactModal ariaHideApp={false} isOpen={showCustomModal} style={modalStyle}>
@@ -128,7 +128,7 @@ export default function ProductDetail() {
                             <div className="enquiry">
                                 <div className="content">
                                     <p>Send an enquiry to know more details about your favourites</p>
-                                    <button>View details {">"}</button>
+                                    <button onClick={() => setShowGetQuoteModal(true)}>View details {">"}</button>
                                 </div>
                                 <img src="../../../assets/productDetails/enquiry.png" alt="" />
                             </div>

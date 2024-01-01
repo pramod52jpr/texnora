@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import '../adminCss/addCategoryForm.css'
 import ReactLoading from 'react-loading';
+import SuccessModal from '../components/SuccessModal';
+import FailureModal from '../components/FailureModal';
 
 export default function UpdateCategory(props) {
+    const [done, setDone] = useState(false);
+    const [fail, setFail] = useState(false);
     const [updateLoading, setUpdateLoading] = useState(false);
     const [imgUrl, setImgUrl] = useState("");
     const [imageFile, setImageFile] = useState();
@@ -21,26 +25,25 @@ export default function UpdateCategory(props) {
         setUpdateLoading(true);
         const token = process.env.REACT_APP_TOKEN;
         const apiUrl = process.env.REACT_APP_CAT_UPDATE_API;
-        const formData=new FormData();
-        if(typeof(imageFile)=="object"){
-            formData.append("image",imageFile);
+        const formData = new FormData();
+        if (typeof (imageFile) == "object") {
+            formData.append("image", imageFile);
         }
-        formData.append("body",JSON.stringify(inputs));
+        formData.append("body", JSON.stringify(inputs));
         await fetch(apiUrl, {
-            method:"post",
+            method: "post",
             headers: {
                 token,
                 id: updateData.id,
             },
-            body:formData
-        }).then(res=>res.json()).then((res)=>{
+            body: formData
+        }).then(res => res.json()).then((res) => {
             setUpdateLoading(false);
-            alert("Category updated successfully");
-            props.closeModal();
+            setDone(true);
             props.fetchCategories();
-        }).catch((e)=>{
+        }).catch((e) => {
             setUpdateLoading(false);
-            alert("Category Not Updated because of some error");
+            setFail(true);
         })
     }
 
@@ -49,25 +52,34 @@ export default function UpdateCategory(props) {
         setInputs({ ...inputs, name: updateData.name });
     }, []);
     return (
-        <div className="addCategoryForm">
-            <div className="cancel">
-                <button onClick={props.closeModal}><i className="fa-solid fa-xmark"></i></button>
-            </div>
-            <h1>Update Category</h1>
-            <form onSubmit={onsubmit}>
-                <label htmlFor="catImage">
-                    {
-                        imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
-                    }
-                </label>
-                <input type="file" onChange={onChangeImage} name="catImage" id="catImage" accept='.jpg,.png,.jpeg' />
-                <input type="text" placeholder={"Enter Name"} value={inputs.name} onChange={(e) => setInputs({ ...inputs, name: e.target.value })} required />
-                <button type='submit'>{updateLoading ?
-                    <div align="center" style={{ width: "100%", height: "100%" }}>
-                        <ReactLoading type='spin' color='white' width={"10%"} height={"100%"} />
-                    </div>
-                    : "Update"}</button>
-            </form>
-        </div>
+        <>
+            {
+                done ?
+                    <SuccessModal h1={"Success"} p={"Category Updated Successfully"} closeModal={props.closeModal} />
+                    : fail ?
+                        <FailureModal h1={"Sorry !"} p={"There is some server issue. Please try again later."} closeModal={props.closeModal} />
+                        :
+                        <div className="addCategoryForm">
+                            <div className="cancel">
+                                <button onClick={props.closeModal}><i className="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <h1>Update Category</h1>
+                            <form onSubmit={onsubmit}>
+                                <label htmlFor="catImage">
+                                    {
+                                        imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
+                                    }
+                                </label>
+                                <input type="file" onChange={onChangeImage} name="catImage" id="catImage" accept='.jpg,.png,.jpeg' />
+                                <input type="text" placeholder={"Enter Name"} value={inputs.name} onChange={(e) => setInputs({ ...inputs, name: e.target.value })} required />
+                                <button type='submit'>{updateLoading ?
+                                    <div align="center" style={{ width: "100%", height: "100%" }}>
+                                        <ReactLoading type='spin' color='white' width={"10%"} height={"100%"} />
+                                    </div>
+                                    : "Update"}</button>
+                            </form>
+                        </div>
+            }
+        </>
     )
 }

@@ -3,6 +3,8 @@ import '../adminCss/sliderImage.css'
 import ReactModal from 'react-modal';
 import ReactLoading from 'react-loading';
 import Header from '../adminComponents/Header';
+import SuccessModal from '../components/SuccessModal';
+import FailureModal from '../components/FailureModal';
 
 export default function SliderImage() {
     const [loading, setLoading] = useState(true);
@@ -82,6 +84,8 @@ export default function SliderImage() {
 }
 
 function AddSlider(props) {
+    const [done, setDone] = useState(false);
+    const [fail, setFail] = useState(false);
     const [submitLoading, setSubmitLoading] = useState(false);
     const [imgUrl, setImgUrl] = useState("");
     const [imageFile, setImageFile] = useState();
@@ -110,40 +114,50 @@ function AddSlider(props) {
                 body: formData
             }).then(res => res.json()).then((res) => {
                 setSubmitLoading(false);
-                alert("Image Added Successfully");
-                props.closeModal();
+                setDone(true);
                 props.fetchSliderImage();
             }).catch((e) => {
                 setSubmitLoading(false);
-                alert("Image not added because of some error");
+                setFail(true);
             })
         }
     }
     return (
-        <div className="addSlider">
-            <div className="cancel">
-                <button onClick={props.closeModal}><i className="fa-solid fa-xmark"></i></button>
-            </div>
-            <h1>Add Category</h1>
-            <form onSubmit={onsubmit}>
-                <label htmlFor="sliderImage">
-                    {
-                        imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
-                    }
-                </label>
-                <input type="file" onChange={onChangeImage} name="sliderImage" id="sliderImage" accept='.jpg,.png,.jpeg' />
-                <button type='submit'>{submitLoading ?
-                    <div align="center" style={{ width: "100%", height: "100%" }}>
-                        <ReactLoading type='spin' color='white' width={"10%"} height={"100%"} />
-                    </div>
-                    : "Submit"}</button>
-            </form>
-        </div>
+        <>
+            {
+                done ?
+                    <SuccessModal h1={"Success"} p={"Slider Added Successfully"} closeModal={props.closeModal} />
+                    : fail ?
+                        <FailureModal h1={"Sorry !"} p={"There is some server issue. Please try again later."} closeModal={props.closeModal} />
+                        :
+                        <div className="addSlider">
+                            <div className="cancel">
+                                <button onClick={props.closeModal}><i className="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <h1>Add Category</h1>
+                            <form onSubmit={onsubmit}>
+                                <label htmlFor="sliderImage">
+                                    {
+                                        imgUrl.length === 0 ? <i className="fa-regular fa-image"></i> : <img src={imgUrl} width={"100%"} height={"100%"} alt='' />
+                                    }
+                                </label>
+                                <input type="file" onChange={onChangeImage} name="sliderImage" id="sliderImage" accept='.jpg,.png,.jpeg' />
+                                <button type='submit'>{submitLoading ?
+                                    <div align="center" style={{ width: "100%", height: "100%" }}>
+                                        <ReactLoading type='spin' color='white' width={"10%"} height={"100%"} />
+                                    </div>
+                                    : "Submit"}</button>
+                            </form>
+                        </div>
+            }
+        </>
     )
 }
 
 
 function DeleteSlider(props) {
+    const [done, setDone] = useState(false);
+    const [fail, setFail] = useState(false);
     const [deleteLoading, setDeleteLoading] = useState(false);
     const deleteData = props.deleteData;
 
@@ -159,25 +173,33 @@ function DeleteSlider(props) {
             }
         }).then(res => res.json()).then((res) => {
             setDeleteLoading(false);
-            alert("Category deleted successfully");
-            props.closeModal();
+            setDone(true);
             props.fetchSliderImage();
         }).catch(() => {
             setDeleteLoading(false);
-            alert("Category not deleted because of some error");
+            setFail(true);
         })
     }
     return (
-        <div className="deleteSlider">
-            <p>Are you Sure you want to delete?</p>
-            <div className="btns">
-                <button className='delete' onClick={ondelete}>{deleteLoading ?
-                    <div align="center" style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <ReactLoading type='spin' color='white' width={"25%"} height={"auto"} />
-                    </div>
-                    : "Delete"}</button>
-                <button className='cancel' onClick={props.closeModal}>Cancel</button>
-            </div>
-        </div>
+        <>
+            {
+                done ?
+                    <SuccessModal h1={"Success"} p={"Slider Deleted Successfully"} closeModal={props.closeModal} />
+                    : fail ?
+                        <FailureModal h1={"Sorry !"} p={"There is some server issue. Please try again later."} closeModal={props.closeModal} />
+                        :
+                        <div className="deleteSlider">
+                            <p>Are you Sure you want to delete?</p>
+                            <div className="btns">
+                                <button className='delete' onClick={ondelete}>{deleteLoading ?
+                                    <div align="center" style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                        <ReactLoading type='spin' color='white' width={"25%"} height={"auto"} />
+                                    </div>
+                                    : "Delete"}</button>
+                                <button className='cancel' onClick={props.closeModal}>Cancel</button>
+                            </div>
+                        </div>
+            }
+        </>
     )
 }

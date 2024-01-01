@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import '../css/customPopup.css'
 import ReactLoading from 'react-loading';
 import SuccessModal from '../components/SuccessModal';
+import FailureModal from '../components/FailureModal';
 
 export default function CustomPopUp(props) {
   const [done, setDone] = useState(false);
+  const [fail, setFail] = useState(false);
   const [submitLoading, setSubmitLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [imageFile, setImageFile] = useState();
@@ -49,7 +51,7 @@ export default function CustomPopUp(props) {
         setDone(true);
       }).catch(() => {
         setSubmitLoading(false);
-        alert("Data not added because of some error");
+        setFail(true);
       });
     }
   }
@@ -59,6 +61,8 @@ export default function CustomPopUp(props) {
       {
         done ?
           <SuccessModal h1={"Requirment added"} p={"Thank you for your requirements, Our team will get back to you shortly"} closeModal={props.closeModal} />
+          : fail?
+          <FailureModal h1={"Sorry !"} p={"There is some server issue. Please try again later."} closeModal={props.closeModal} />
           :
           <>
             <div className="cancel">

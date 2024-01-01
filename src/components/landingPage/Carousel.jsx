@@ -20,14 +20,14 @@ export default function Carousel() {
     }
     useEffect(() => {
         fetchSlider();
-    },[]);
+    }, []);
     return (
-        <div className="carouselPage" style={{overflow:"hidden"}}>
+        <div className="carouselPage" style={{ overflow: "hidden" }}>
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" data-aos="zoom-out">
                 <div className="carousel-inner">
                     {
                         sliderData.length === 0 ? null :
-                            <div className="carousel-item active" style={{ backgroundImage: `url('${imgBaseUrl}/storage/sliderimages/${sliderData[0].image}')`,backgroundSize:"contain" }}>
+                            <div className="carousel-item active" style={{ backgroundImage: `url('${imgBaseUrl}/storage/sliderimages/${sliderData[0].image}')`, backgroundSize: "contain" }}>
                             </div>
                     }
                     <div className={`carousel-item ${sliderData.length === 0 ? "active" : null}`} style={{ backgroundImage: "url('assets/landingPage/slider1.png')" }}>
@@ -56,6 +56,8 @@ export default function Carousel() {
                         </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev"></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next"></button>
             </div>
         </div>
     )
