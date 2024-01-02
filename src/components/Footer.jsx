@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import '../css/footer.css'
+import ReactLoading from 'react-loading';
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const [loading, setLoading] = useState(true);
+  const [companyDetails, setCompanyDetails] = useState([]);
   const [allProductData, setAllProductData] = useState([]);
   async function fetchProducts() {
     const token = process.env.REACT_APP_TOKEN;
@@ -16,8 +19,21 @@ export default function Footer() {
     });
   }
 
+  async function fetchCompanyDetails() {
+    setLoading(true);
+    const token = process.env.REACT_APP_TOKEN;
+    const companyDetailsApi = process.env.REACT_APP_COMPANY_DETAILS_API;
+    await fetch(companyDetailsApi, {
+      headers: { token }
+    }).then(res => res.json()).then((res) => {
+      setLoading(false);
+      setCompanyDetails(res.data);
+    });
+  }
+
   useEffect(() => {
     fetchProducts();
+    fetchCompanyDetails();
   }, []);
   return (
     <footer style={{ overflow: "hidden" }}>
@@ -39,9 +55,17 @@ export default function Footer() {
         </div>
         <div className="footerContact" data-aos="fade-left">
           <h1>Contact Us</h1>
-          <p>Reg. Office: 4/46-A, Sadaiyam palayam, Andankovil Melbagam, Karur-India-639008</p>
-          <p>Ph: <a href="tel:+919360057155">+91 93600 57155</a></p>
-          <p>Email: <a href="mailto:kru.texnora@gmail.com">kru.texnora@gmail.com</a></p>
+          {
+            loading ? <div style={{ height: "100px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <ReactLoading type='spokes' height={40} width={40} color='green' />
+            </div>
+              :
+              <>
+                <p>Reg. Office: {companyDetails[0].address}</p>
+                <p>Ph: <a href={`tel:+91 ${companyDetails[0].phone}`}>+91 {companyDetails[0].phone}</a></p>
+                <p>Email: <a href={`mailto:${companyDetails[0].email}`}>{companyDetails[0].email}</a></p>
+              </>
+          }
         </div>
       </div>
       <hr />

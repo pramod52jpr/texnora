@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/contact.css'
 import { Link } from 'react-router-dom'
 import ReactLoading from 'react-loading';
@@ -6,6 +6,8 @@ import ReactModal from 'react-modal';
 import SuccessModal from '../components/SuccessModal';
 
 export default function Contact() {
+    const [loading, setLoading] = useState(true);
+    const [companyDetails, setCompanyDetails] = useState([]);
     const [doneModal, setDoneModal] = useState(false);
     const [submitLoading, setSubmitLoading] = useState(false);
     const [inputs, setInputs] = useState({
@@ -53,6 +55,22 @@ export default function Contact() {
             alert("Data not added because of some error");
         });
     }
+
+    async function fetchCompanyDetails() {
+        setLoading(true);
+        const token = process.env.REACT_APP_TOKEN;
+        const companyDetailsApi = process.env.REACT_APP_COMPANY_DETAILS_API;
+        await fetch(companyDetailsApi, {
+            headers: { token }
+        }).then(res => res.json()).then((res) => {
+            setLoading(false);
+            setCompanyDetails(res.data);
+        });
+    }
+
+    useEffect(() => {
+        fetchCompanyDetails();
+    }, []);
     return (
         <>
 
@@ -66,33 +84,41 @@ export default function Contact() {
                 <div className="contactInformation" data-aos="fade-right">
                     <h2>Lets Talk</h2>
                     <h1>Speak with Our Team</h1>
-                    <div className="information">
-                        <div className="icon">
-                            <i className="fa-solid fa-house"></i>
+                    {
+                        loading ? <div style={{ height: "100px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <ReactLoading type='spokes' height={40} width={40} color='white' />
                         </div>
-                        <div className="content">
-                            <div className="label">Email:</div>
-                            <Link to={"mailto:kru.texnora@gmail.com"} className="value">kru.texnora@gmail.com</Link>
-                        </div>
-                    </div>
-                    <div className="information">
-                        <div className="icon">
-                            <i className="fa-solid fa-phone"></i>
-                        </div>
-                        <div className="content">
-                            <div className="label">Phone:</div>
-                            <Link to={"tel:+91 93600 57155"} className="value">+91 93600 57155</Link>
-                        </div>
-                    </div>
-                    <div className="information">
-                        <div className="icon">
-                            <i className="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div className="content">
-                            <div className="label">Address:</div>
-                            <div className="value">4/46-A, Sadaiyam palayam, Andankovil Melbagam, Karur-India-639008</div>
-                        </div>
-                    </div>
+                            :
+                            <>
+                                <div className="information">
+                                    <div className="icon">
+                                        <i className="fa-solid fa-house"></i>
+                                    </div>
+                                    <div className="content">
+                                        <div className="label">Email:</div>
+                                        <Link to={`mailto:${companyDetails[0].email}`} className="value">{companyDetails[0].email}</Link>
+                                    </div>
+                                </div>
+                                <div className="information">
+                                    <div className="icon">
+                                        <i className="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div className="content">
+                                        <div className="label">Phone:</div>
+                                        <Link to={`tel:+91 ${companyDetails[0].phone}`} className="value">+91 {companyDetails[0].phone}</Link>
+                                    </div>
+                                </div>
+                                <div className="information">
+                                    <div className="icon">
+                                        <i className="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div className="content">
+                                        <div className="label">Address:</div>
+                                        <div className="value">{companyDetails[0].address}</div>
+                                    </div>
+                                </div>
+                            </>
+                    }
                 </div>
                 <div className="form" data-aos="fade-left">
                     <h2>Get In Touch</h2>
@@ -109,7 +135,7 @@ export default function Contact() {
                     </form>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62670.88055137304!2d78.01166415768289!3d10.968653717978029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa2f27dcbe6ec3%3A0x9dff5b01b686f1e0!2sTamil%20Nadu%20639008!5e0!3m2!1sen!2sin!4v1702464385522!5m2!1sen!2sin" width="100%" height="300" title='Map' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.7511787458125!2d78.01312209999999!3d10.9821444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa293184b322fb%3A0xdb90e8bd04b0bcb7!2sTex%20Nora!5e0!3m2!1sen!2sin!4v1704109652959!5m2!1sen!2sin" width="100%" height="300" title='Map' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </>
     )
 }

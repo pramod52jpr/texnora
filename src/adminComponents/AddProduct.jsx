@@ -130,9 +130,9 @@ export default function AddProduct(props) {
                                 <input type="text" name="name" id="name" value={inputs.name} onChange={(e) => setInputs({ ...inputs, name: e.target.value })} placeholder='Enter Name' required />
                                 <input type="text" name="pro_no" id="pro_no" value={inputs.pro_no} onChange={(e) => setInputs({ ...inputs, pro_no: e.target.value })} placeholder='Enter Id' required />
                                 <textarea name="description" id="description" cols="30" rows="3" value={inputs.description} onChange={(e) => setInputs({ ...inputs, description: e.target.value })} placeholder='Enter Decription' required></textarea>
-                                <input type="text" name="material" id="material" value={inputs.material} onChange={(e) => setInputs({ ...inputs, material: e.target.value })} placeholder='Material' />
-                                <input type="text" name="size" id="size" value={inputs.size} onChange={(e) => setInputs({ ...inputs, size: e.target.value })} placeholder='Size' />
-                                <input type="text" name="color" id="color" value={inputs.color} onChange={(e) => setInputs({ ...inputs, color: e.target.value })} placeholder='Color' />
+                                <input type="text" name="material" id="material" value={inputs.material} onChange={(e) => setInputs({ ...inputs, material: e.target.value })} placeholder='Material' required />
+                                <input type="text" name="size" id="size" value={inputs.size} onChange={(e) => setInputs({ ...inputs, size: e.target.value })} placeholder='Size' required />
+                                <input type="text" name="color" id="color" value={inputs.color} onChange={(e) => setInputs({ ...inputs, color: e.target.value })} placeholder='Color' required />
                                 <button type='submit'>{submitLoading ?
                                     <div align="center" style={{ width: "100%", height: "100%" }}>
                                         <ReactLoading type='spin' color='white' width={"10%"} height={"100%"} />

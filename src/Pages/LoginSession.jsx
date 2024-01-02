@@ -14,7 +14,6 @@ export default function LoginSession() {
             setAllAdminData(res.data);
             if (id === null) {
                 navigate("/admin");
-                console.log("first");
             } else {
                 const user = res.data.filter(ele => ele.id === parseInt(id));
                 if (user.length === 0) {
