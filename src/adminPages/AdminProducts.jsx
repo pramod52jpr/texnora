@@ -40,7 +40,7 @@ export default function AdminProducts() {
         setShowViewProductModal(false);
     }
 
-    function onSearch(e){
+    function onSearch(e) {
         setSearch(e.target.value);
         if (e.target.value.length === 0) {
             setSelectedCategoryData(allProductData);
@@ -117,45 +117,47 @@ export default function AdminProducts() {
                     <button onClick={() => setShowAddProductModal(true)}><i className="fa-solid fa-circle-plus"></i></button>
                     <input type="search" value={search} onChange={onSearch} placeholder='Search' />
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Category</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            loading ? <tr align="center"><td style={{ height: "300px" }} colSpan={500}>
-                                <ReactLoading type='spokes' height={50} width={50} color='green' />
-                            </td></tr>
-                                : selectedCategoryData.map(element => <tr key={element.id}>
-                                    <td>{element.name}</td>
-                                    <td><div className='image' style={{ backgroundImage: `url('${imgBaseUrl}/storage/productimages/${element.img1}')` }}></div></td>
-                                    <td>{allCategoryData.filter(e => e.id === element.cid)[0].name}</td>
-                                    <td>
-                                        <div className="action">
-                                            <button className='edit' onClick={() => {
-                                                setUpdateData(element);
-                                                setShowUpdateProductModal(true);
-                                            }}><i className="fa-solid fa-pen"></i></button>
-                                            <button className='delete' onClick={() => {
-                                                setDeleteData(element);
-                                                setShowDeleteProductModal(true);
-                                            }}><i className="fa-solid fa-trash"></i></button>
-                                            <button className='view' onClick={() => {
-                                                setViewData(element);
-                                                setShowViewProductModal(true);
-                                            }}><i className="fa-solid fa-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                )
-                        }
-                    </tbody>
-                </table>
+                <div className="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Category</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                loading ? <tr align="center"><td style={{ height: "300px" }} colSpan={500}>
+                                    <ReactLoading type='spokes' height={50} width={50} color='green' />
+                                </td></tr>
+                                    : selectedCategoryData.map(element => <tr key={element.id}>
+                                        <td>{element.name}</td>
+                                        <td><div className='image' style={{ backgroundImage: `url('${imgBaseUrl}/storage/productimages/${element.img1}')` }}></div></td>
+                                        <td>{allCategoryData.filter(e => e.id === element.cid)[0].name}</td>
+                                        <td>
+                                            <div className="action">
+                                                <button className='edit' onClick={() => {
+                                                    setUpdateData(element);
+                                                    setShowUpdateProductModal(true);
+                                                }}><i className="fa-solid fa-pen"></i></button>
+                                                <button className='delete' onClick={() => {
+                                                    setDeleteData(element);
+                                                    setShowDeleteProductModal(true);
+                                                }}><i className="fa-solid fa-trash"></i></button>
+                                                <button className='view' onClick={() => {
+                                                    setViewData(element);
+                                                    setShowViewProductModal(true);
+                                                }}><i className="fa-solid fa-eye"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    )
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     )

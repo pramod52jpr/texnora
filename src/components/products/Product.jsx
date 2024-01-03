@@ -34,7 +34,7 @@ export default function Product(props) {
             <div className="letsTalk" data-aos="zoom-out">
                 <div className="content">
                     <h1>Lets Talk</h1>
-                    <button>contact us</button>
+                    <button onClick={()=>navigate("/contact-us")}>contact us</button>
                 </div>
                 <hr />
             </div>

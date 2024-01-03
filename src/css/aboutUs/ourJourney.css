@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Palanquin+Dark&display=swap');
 
 .ourJourney h1{
     font-family: 'Palanquin Dark', sans-serif;
@@ -23,7 +23,7 @@
 .ourJourney .journeyContainer .journey .content{
     width: 50%;
     margin: 10px;
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 15px;
     color: grey;
 }

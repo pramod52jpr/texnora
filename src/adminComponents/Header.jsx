@@ -24,7 +24,7 @@ export default function Header(props) {
                     <Link className="navbar-brand" to={"/"}>
                         <img src="assets/texnora-logo.png" alt="" />
                     </Link>
-                    <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style={{backgroundColor:"#D9F8FF"}}>
+                    <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style={{backgroundColor:"#D9F8FF",width:"300px"}}>
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel"><img width={150} src="assets/texnora-logo.png" alt="" /></h5>
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -32,35 +32,37 @@ export default function Header(props) {
                         <div className="offcanvas-body" onClick={closeNav}>
                             <ul className="navbar-nav justify-content-end flex-grow-1">
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/dashboard"}>Dashboard</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/dashboard"}><i class="fa-solid fa-house"></i>Dashboard</Link>
+                                </li>
+                                <h2>Customizable</h2>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-categories"}><i class="fa-solid fa-list"></i>Categories</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-categories"}>Categories</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-products"}><i class="fa-solid fa-cart-shopping"></i>Products</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-products"}>Products</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-slider-image"}><i class="fa-solid fa-image"></i>Slider Images</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-quote-datas"}>Quotes</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-data"}><i class="fa-solid fa-gear"></i>Admin User</Link>
+                                </li>
+                                <h2>Data</h2>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-quote-datas"}><i class="fa-solid fa-quote-right"></i>Quotes</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-custom-requirements"}>Requirements</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-custom-requirements"}><i class="fa-solid fa-cart-shopping"></i>Requirements</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-contact-us-data"}>Contact Us Data</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-data"}>Admin Data</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to={"/admin-slider-image"}>Slider Images</Link>
+                                    <Link className="nav-link active" aria-current="page" to={"/admin-contact-us-data"}><i class="fa-solid fa-address-card"></i>User Enquiries</Link>
                                 </li>
                                 <hr />
                                 <li className="nav-item">
                                     <Link className="nav-link active" aria-current="page" onClick={()=>{
                                         localStorage.clear();
                                         navigate("/admin");
-                                    }} to={"/admin"}>Log Out</Link>
+                                    }} to={"/admin"}><i class="fa-solid fa-right-from-bracket"></i>Log Out</Link>
                                 </li>
                             </ul>
                         </div>

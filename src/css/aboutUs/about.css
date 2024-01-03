@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Palanquin+Dark&display=swap');
 
 .about .image{
     background-color: black;
@@ -23,7 +23,7 @@
     font-size: 20px;
 }
 .about .content p{
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'PT Sans', sans-serif;
     color: grey;
     font-size: 15px;
 }

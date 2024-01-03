@@ -9,11 +9,13 @@ import Uniqueness from '../components/landingPage/Uniqueness'
 import Practice from '../components/landingPage/Practice'
 import Process from '../components/landingPage/Process'
 import Certification from '../components/landingPage/Certification'
+import CustomBannerBtn from '../components/landingPage/CustomBannerBtn'
 
 export default function LandingPage() {
     return (
         <>
             <Carousel />
+            {/* <CustomBannerBtn /> */}
             <Carousel2 />
             <JourneyVision />
             <Mission />
@@ -22,7 +24,7 @@ export default function LandingPage() {
             <Uniqueness />
             <Practice />
             <Process />
-            <Certification/>
+            <Certification />
         </>
     )
 }

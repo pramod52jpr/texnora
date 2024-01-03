@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Overlock+SC&family=Ovo&family=Oxygen:wght@300&family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
 .productDetailPage{
     display: flex;
@@ -66,7 +67,7 @@
     align-items: center;
 }
 .productDetailPage .productDetail .name h1{
-    font-family: 'Overlock SC', sans-serif;
+    font-family: 'Patua One', serif;
     font-size: 20px;
 }
 .productDetailPage .productDetail .name button{

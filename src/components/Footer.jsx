@@ -49,7 +49,7 @@ export default function Footer() {
           <h1>Products</h1>
           <div className="content">
             {
-              allProductData.slice(0, allProductData.length > 6 ? 6 : allProductData.length).map(element => <Link key={element.id} to={`/product-details/${element.cid}/${element.id}`}>{element.name}</Link>)
+              allProductData.slice(0, allProductData.length > 7 ? 7 : allProductData.length).map(element => <Link key={element.id} to={`/product-details/${element.cid}/${element.id}`}>{element.name}</Link>)
             }
           </div>
         </div>
