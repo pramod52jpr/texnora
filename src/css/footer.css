@@ -78,6 +78,13 @@ footer .footerContainer .footerContact p {
 footer .footerContainer .footerContact p a {
     text-decoration: none;
 }
+footer .footerContainer .footerContact p a.whatsApp{
+    display: flex;
+    align-items: center;
+}
+footer .footerContainer .footerContact p a.whatsApp img{
+    margin-right: 5px;
+}
 
 footer .footerNav {
     display: flex;
