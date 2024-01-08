@@ -62,7 +62,10 @@ export default function Footer() {
               :
               <>
                 <p>Reg. Office: {companyDetails[0].address}</p>
-                <p>Ph: <a href={`tel:+91 ${companyDetails[0].phone}`}>+91 {companyDetails[0].phone}</a></p>
+                <p>Ph:
+                  <a href={`tel:+91 ${companyDetails[0].phone}`}>+91 {companyDetails[0].phone}</a><br />
+                  <a href={`https://wa.me/+919994211809`}>0091-9994211809 (WhatsApp)</a>
+                </p>
                 <p>Email: <a href={`mailto:${companyDetails[0].email}`}>{companyDetails[0].email}</a></p>
               </>
           }
